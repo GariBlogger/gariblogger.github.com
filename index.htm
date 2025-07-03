@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gari Blogger – Your Vehicle Insights</title>
+  <style>
+    /* Basic reset */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: Arial, sans-serif; line-height:1.6; }
+    nav { background:#333; color:#fff; padding:10px 20px; position:fixed; width:100%; top:0; z-index:100; }
+    nav .container { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:auto; }
+    nav .logo { font-size:1.5em; }
+    nav ul { list-style:none; display:flex; }
+    nav ul li { margin-left:20px; }
+    nav ul li a { color:#fff; text-decoration:none; }
+    nav .menu-toggle { display:none; cursor:pointer; }
+    section { padding:100px 20px 60px; max-width:1200px; margin:80px auto 0 auto; }
+    section:nth-of-type(odd) { background:#f4f4f4; }
+    footer { background:#222; color:#aaa; text-align:center; padding:20px; margin-top:40px; }
+    footer a { color:#ddd; text-decoration:none; margin:0 10px; }
+    @media(max-width:768px){
+      nav ul { flex-direction:column; background:#333; position:absolute; top:50px; right:0; width:200px; display:none; }
+      nav ul.show { display:flex; }
+      nav .menu-toggle { display:block; }
+      nav ul li { margin:10px 0; text-align:center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">Gari Blogger</div>
+    <span class="menu-toggle">☰</span>
+    <ul id="menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#blog">Blog Posts</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="home">
+  <h1>Welcome to Gari Blogger</h1>
+  <p>Your go‑to blog for all things automotive. From calculating vehicle taxes to discussing the Irish VRT system in detail.</p>
+  <p>For example, check out my deep dive on how to use a VRT calculator:</p>
+  <p><a href="https://medium.com/@WaybigsBlog/how-to-use-vrt-calculator-45f6080d2c95" target="_blank">How to Use VRT Calculator</a></p>
+</section>
+
+<section id="blog">
+  <h2>Featured Vehicle Tax Articles</h2>
+  <ul>
+    <li><a href="https://www.quora.com/profile/Waybigs-Blog/How-VRT-is-calculated-in-Ireland-in-2026" target="_blank">
+      How VRT is calculated in Ireland (2026)</a> – a detailed explanation on Quora.</li>
+    <li>General insights on vehicle fees and my <a href="https://www.quora.com/profile/Waybigs-Blog" target="_blank">Quora profile</a>.</li>
+    <li>Follow my <a href="https://www.pinterest.com/sponcalculator/" target="_blank">Pinterest board</a> for calculators and vehicle diagrams.</li>
+  </ul>
+</section>
+
+<section id="about">
+  <h2>About Me – Gari Blogger</h2>
+  <p>I’m an automotive enthusiast who loves to share insights via multiple platforms:</p>
+  <ul>
+    <li><a href="https://github.com/GariBlogger" target="_blank">GitHub</a> – where I keep code snippets and tools.</li>
+    <li><a href="https://stackoverflow.com/users/30935458/gari-blogger" target="_blank">StackOverflow</a> – I help answer automotive programming questions.</li>
+    <li><a href="https://www.behance.net/GariBlogger" target="_blank">Behance</a> – check my design portfolio.</li>
+    <li><a href="https://www.twitch.tv/gariblogger" target="_blank">Twitch</a> – watch me live‑stream automotive tech sessions.</li>
+    <li><a href="https://www.goodreads.com/user/show/188068400-gari-blogger" target="_blank">Goodreads</a> – where I review automotive books.</li>
+    <li><a href="https://www.kickstarter.com/profile/gariblogger" target="_blank">Kickstarter</a> – support my projects!</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact & Connect</h2>
+  <p>Have questions about vehicle taxes or want to collaborate? Reach out via any platform:</p>
+  <ul>
+    <li>Quora – <a href="https://www.quora.com/profile/Waybigs-Blog" target="_blank">Waybigs-Blog</a></li>
+    <li>GitHub – <a href="https://github.com/GariBlogger" target="_blank">GariBlogger</a></li>
+    <li>Twitch – <a href="https://www.twitch.tv/gariblogger" target="_blank">gariblogger</a></li>
+  </ul>
+</section>
+
+<footer>
+  <p>&copy; 2025 Gari Blogger. All rights reserved.</p>
+  <p>
+    <a href="https://medium.com/@WaybigsBlog/how-to-use-vrt-calculator-45f6080d2c95" target="_blank">Medium</a> |
+    <a href="https://www.quora.com/profile/Waybigs-Blog" target="_blank">Quora</a> |
+    <a href="https://github.com/GariBlogger" target="_blank">GitHub</a> |
+    <a href="https://www.behance.net/GariBlogger" target="_blank">Behance</a>
+  </p>
+</footer>
+
+<script>
+  // Smooth scroll
+  document.querySelectorAll('nav ul li a').forEach(a=>{
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href'))
+        .scrollIntoView({ behavior: 'smooth' });
+      if(window.innerWidth < 769){
+        document.getElementById('menu').classList.remove('show');
+      }
+    });
+  });
+  // Mobile menu toggle
+  document.querySelector('.menu-toggle').addEventListener('click', ()=>{
+    document.getElementById('menu').classList.toggle('show');
+  });
+</script>
+
+</body>
+</html>
